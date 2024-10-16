@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喫煙可能なホテル検索</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>喫煙可能なホテル検索</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="keyword">都道府県、地名、または最寄り駅を入力してください:</label>
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="例: 東京、新宿、渋谷駅">
+            </div>
+            <button type="submit" class="btn btn-primary">検索</button>
+        </form>
+
+        <br>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if tables %}
+        <h2>検索結果</h2>
+        <div class="table-responsive">
+            {{ tables|safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
