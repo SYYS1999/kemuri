@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* ボタンの通常状態 */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ボタンを押したときのアクティブ状態 */
+button:active {
+    transform: scale(0.9);  /* 10%縮む */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* 影が濃くなる */
+    background-color: #0056b3; /* 色が少し暗くなる */
+}
+
+/* ボタンにホバーしたときの状態 */
+button:hover {
+    background-color: #0069d9; /* 色を少し濃く */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 影を強調 */
+    transform: scale(1.05);  /* 少し大きくなる */
+}
