@@ -11,13 +11,19 @@ body {
 button {
     background-color: #007bff;
     color: white;
-    padding: 12px 24px;
+    padding: 20px 40px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 22px;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* 検索ボタンのスタイルを大きくする */
+.btn-primary {
+    padding: 15px 30px; /* ボタンの内側の余白を大きくする */
+    font-size: 20px; /* ボタン内の文字サイズを大きくする */
+    border-radius: 8px; /* ボタンの角を少し丸くする（お好みで） */
 }
 
 /* ボタンを押したときのアクティブ状態 */
@@ -53,18 +59,24 @@ table th {
 }
 /* 画像セルの幅を調整（必要なら） */
 table td img {
-    max-height: 80px; /* 画像の最大高さを80pxに設定して、行に合わせる */
-    padding-left: 5px; /* 左のスペースを少し埋める */
+    height: 99%; /* 画像の最大高さを80pxに設定して、行に合わせる */
+    padding-left: 0; /* 左のスペースを少し埋める */
+    margin-left: 0; /* 画像を左に寄せるために左のマージンを0に */
+    object-fit: cover; /* 画像を縦横比を保ちながら埋める */
 }
+table td:nth-child(1), table th:nth-child(1) {
+    width: 120px; /* 画像列の幅を120pxに設定 */
+}
+
 /* 最寄駅列の幅を設定 */
 table td:nth-child(4), table th:nth-child(4) {
-    width: 180px; /* 最寄駅の列を200pxに設定 */
+    width: 130px; /* 最寄駅の列を200pxに設定 */
 }
 
 /* 料金列の幅を設定 */
 table td:nth-child(5), table th:nth-child(5) {
-    width: 150px; /* 料金の列を200pxに設定 */
+    width: 130px; /* 料金の列を200pxに設定 */
 }
 table td:nth-child(6), table th:nth-child(6) {
-    width: 100px; /* 予約ページの列を150pxに設定 */
+    width: 110px; /* 予約ページの列を150pxに設定 */
 }

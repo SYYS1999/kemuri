@@ -33,9 +33,12 @@ def search_hotels(keyword):
     hotels = []
     for hotel in data['hotels']:
         hotel_info = hotel['hotel'][0]['hotelBasicInfo']
+        hotel_name = hotel_info.get('hotelName', '-')
+        google_maps_link = f'https://www.google.com/maps/search/?api=1&query={hotel_name}'
+        
         hotels.append({
             '画像': f'<img src="{hotel_info.get("hotelImageUrl", "#")}" style="width:100px;">',
-            'ホテル名': hotel_info['hotelName'],
+            'ホテル名': f'<a href="{google_maps_link}" target="_blank">{hotel_name}</a>',
             '住所': hotel_info['address1'] + hotel_info['address2'],
             '最寄り駅': hotel_info['nearestStation'],
             '料金': f"{hotel_info.get('hotelMinCharge', '-')}円〜",  # 料金を表示
