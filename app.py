@@ -34,9 +34,11 @@ def search_hotels(keyword):
     for hotel in data['hotels']:
         hotel_info = hotel['hotel'][0]['hotelBasicInfo']
         hotels.append({
+            '画像': f'<img src="{hotel_info.get("hotelImageUrl", "#")}" style="width:100px;">',
             'ホテル名': hotel_info['hotelName'],
             '住所': hotel_info['address1'] + hotel_info['address2'],
             '最寄り駅': hotel_info['nearestStation'],
+            '料金': f"{hotel_info.get('hotelMinCharge', '-')}円〜",  # 料金を表示
             '予約ページ': hotel_info['hotelInformationUrl']
         })
 
@@ -58,6 +60,7 @@ def index():
             # HTMLのテーブルとしてデータフレームを表示
             hotels_df['予約ページ'] = hotels_df['予約ページ'].apply(lambda x: f'<a href="{x}" target="_blank">リンク</a>')
             hotels_html = hotels_df.to_html(classes='table table-striped', index=False, escape=False)
+            hotels_html = hotels_html.replace('<th>画像</th>', '<th></th>')
             return render_template('hotels.html', tables=hotels_html, error=None)
         else:
             return render_template('hotels.html', tables=None, error="地名や駅名を入力してください。")

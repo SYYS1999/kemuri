@@ -4,7 +4,7 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1300px;
 }
 
 /* ボタンの通常状態 */
@@ -32,4 +32,39 @@ button:hover {
     background-color: #0069d9; /* 色を少し濃く */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 影を強調 */
     transform: scale(1.05);  /* 少し大きくなる */
+}
+
+/* テーブル全体のスタイル */
+table {
+    width: 100%; /* テーブルの幅をページいっぱいに */
+    table-layout: fixed; /* 各列の幅を揃える */
+    text-align: center; /* テキストを中央に揃える */
+    font-size: 18px; /* 文字サイズを大きくする */
+}
+
+/* 各行の高さを揃え、文字を中央に揃える */
+table td, table th {
+    height: 100px; /* 行の高さを100pxに設定 */
+    vertical-align: middle; /* 文字を縦軸の中央に揃える */
+}
+
+table th {
+    text-align: center; /* テーブルヘッダーの文字を中央揃えに */
+}
+/* 画像セルの幅を調整（必要なら） */
+table td img {
+    max-height: 80px; /* 画像の最大高さを80pxに設定して、行に合わせる */
+    padding-left: 5px; /* 左のスペースを少し埋める */
+}
+/* 最寄駅列の幅を設定 */
+table td:nth-child(4), table th:nth-child(4) {
+    width: 180px; /* 最寄駅の列を200pxに設定 */
+}
+
+/* 料金列の幅を設定 */
+table td:nth-child(5), table th:nth-child(5) {
+    width: 150px; /* 料金の列を200pxに設定 */
+}
+table td:nth-child(6), table th:nth-child(6) {
+    width: 100px; /* 予約ページの列を150pxに設定 */
 }
