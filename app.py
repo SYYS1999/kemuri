@@ -41,7 +41,7 @@ def search_hotels(keyword):
             'ホテル名': f'<a href="{google_maps_link}" target="_blank">{hotel_name}</a>',
             '住所': hotel_info['address1'] + hotel_info['address2'],
             '最寄り駅': hotel_info['nearestStation'],
-            '料金': f"{hotel_info.get('hotelMinCharge', '-')}円〜",  # 料金を表示
+            '料金': f"{hotel_info['hotelMinCharge']}円〜" if hotel_info.get('hotelMinCharge') else "-", # 料金を表示
             '予約ページ': hotel_info['hotelInformationUrl']
         })
 
