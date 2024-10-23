@@ -7,7 +7,6 @@ body {
     max-width: 1300px;
 }
 
-/* ボタンの通常状態 */
 button {
     background-color: #007bff;
     color: white;
@@ -19,64 +18,58 @@ button {
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-/* 検索ボタンのスタイルを大きくする */
+
 .btn-primary {
-    padding: 15px 30px; /* ボタンの内側の余白を大きくする */
-    font-size: 20px; /* ボタン内の文字サイズを大きくする */
-    border-radius: 8px; /* ボタンの角を少し丸くする（お好みで） */
+    padding: 15px 30px; 
+    font-size: 20px;
+    border-radius: 8px;
 }
 
-/* ボタンを押したときのアクティブ状態 */
 button:active {
-    transform: scale(0.9);  /* 10%縮む */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* 影が濃くなる */
-    background-color: #0056b3; /* 色が少し暗くなる */
+    transform: scale(0.9); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
 }
 
-/* ボタンにホバーしたときの状態 */
 button:hover {
-    background-color: #0069d9; /* 色を少し濃く */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* 影を強調 */
-    transform: scale(1.05);  /* 少し大きくなる */
+    background-color: #0069d9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
-/* テーブル全体のスタイル */
 table {
-    width: 100%; /* テーブルの幅をページいっぱいに */
-    table-layout: fixed; /* 各列の幅を揃える */
-    text-align: center; /* テキストを中央に揃える */
-    font-size: 18px; /* 文字サイズを大きくする */
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    font-size: 18px;
 }
 
-/* 各行の高さを揃え、文字を中央に揃える */
 table td, table th {
-    height: 100px; /* 行の高さを100pxに設定 */
-    vertical-align: middle; /* 文字を縦軸の中央に揃える */
+    height: 100px;
+    vertical-align: middle;
 }
 
 table th {
-    text-align: center; /* テーブルヘッダーの文字を中央揃えに */
+    text-align: center;
 }
-/* 画像セルの幅を調整（必要なら） */
+
 table td img {
-    height: 99%; /* 画像の最大高さを80pxに設定して、行に合わせる */
-    padding-left: 0; /* 左のスペースを少し埋める */
-    margin-left: 0; /* 画像を左に寄せるために左のマージンを0に */
-    object-fit: cover; /* 画像を縦横比を保ちながら埋める */
+    height: 99%;
+    padding-left: 0;
+    margin-left: 0;
+    object-fit: cover;
 }
 table td:nth-child(1), table th:nth-child(1) {
-    width: 120px; /* 画像列の幅を120pxに設定 */
+    width: 120px;
 }
 
-/* 最寄駅列の幅を設定 */
 table td:nth-child(4), table th:nth-child(4) {
-    width: 130px; /* 最寄駅の列を200pxに設定 */
+    width: 130px;
 }
 
-/* 料金列の幅を設定 */
 table td:nth-child(5), table th:nth-child(5) {
-    width: 130px; /* 料金の列を200pxに設定 */
+    width: 130px;
 }
 table td:nth-child(6), table th:nth-child(6) {
-    width: 110px; /* 予約ページの列を150pxに設定 */
+    width: 110px;
 }

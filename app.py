@@ -4,17 +4,16 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# 楽天APIの設定
 API_URL = "https://app.rakuten.co.jp/services/api/Travel/KeywordHotelSearch/20170426?[parameter]=[value]…"
-API_KEY = "1074298303244057275"  # 取得した楽天APIのアプリケーションIDに置き換えてください
+API_KEY = "1074298303244057275" 
 
 # ホテル検索関数
 def search_hotels(keyword):
     params = {
         'applicationId': API_KEY,
-        'keyword': keyword,  # ユーザーが入力したキーワード（都道府県や地名、最寄駅）
-        'smoking': 1,  # 喫煙可の部屋を検索
-        'hits': 30,  # 最大30件取得
+        'keyword': keyword,
+        'smoking': 1, 
+        'hits': 30, 
     }
 
     response = requests.get(API_URL, params=params)
@@ -41,7 +40,7 @@ def search_hotels(keyword):
             'ホテル名': f'<a href="{google_maps_link}" target="_blank">{hotel_name}</a>',
             '住所': hotel_info['address1'] + hotel_info['address2'],
             '最寄り駅': hotel_info['nearestStation'],
-            '料金': f"{hotel_info['hotelMinCharge']}円〜" if hotel_info.get('hotelMinCharge') else "-", # 料金を表示
+            '料金': f"{hotel_info['hotelMinCharge']}円〜" if hotel_info.get('hotelMinCharge') else "-",
             '予約ページ': hotel_info['hotelInformationUrl']
         })
 
