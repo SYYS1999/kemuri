@@ -3,11 +3,13 @@ certifi==2024.8.30
 charset-normalizer==3.4.0
 click==8.1.7
 Flask==3.0.3
+gunicorn==23.0.0
 idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==3.0.1
 numpy==2.1.2
+packaging==24.1
 pandas==2.2.3
 python-dateutil==2.9.0.post0
 pytz==2024.2
